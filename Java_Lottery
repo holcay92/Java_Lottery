@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+import java.util.Collections;
+
+import java.util.ArrayList;
+public class MilliPiyango {
+	public static void main(String[] args) {
+		int N;
+		System.out.print("HO�GELD�N�Z...\n\n");		
+		do {			
+		System.out.print("\t\t\tL�TFEN OYNAMAK �STED���N�Z OYUNUN NUMARASINI G�R�N�Z...\n\n");
+		System.out.println("\t\t\t--0----------�IKI�:\n \t\t\t--1---SAYISAL LOTO:\n \t\t\t--2---- S�PER LOTO:\n\n \t\t\tNUMARA: ");			
+		@SuppressWarnings("resource")
+		Scanner input=new Scanner(System.in);
+		N = input.nextInt();
+			switch( N ) {
+				case 1:		
+					say�salLoto();break;
+				case 2:
+					s�perLoto();break;
+				case 0:{
+					System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPROGRAM SONLANDIRILDI...");
+					System.exit(0);
+				}	
+			}	
+		}
+		while(N!=0);
+	}
+	public static void say�salLoto() {
+		ArrayList<Integer> list = new ArrayList<>();
+		for(int i = 0 ; i < 90 ; i++) {
+			list.add(i,i+1);
+		}	
+			Collections.shuffle (list); 
+			System.out.println ("�ANSLI NUMARALARINIZ..."+"\n"); 
+			System.out.print("- ");
+			for (int k = 0 ; k < 6 ; k ++) { 
+				
+			System.out.print ( list.get (k)+" - " );
+	
+			}System.out.println();
+			System.out.println();						
+	}
+		public static void s�perLoto() {
+			ArrayList<Integer> list = new ArrayList<>();
+			for(int i = 0 ; i < 60 ; i++) {
+				list.add(i,i+1);
+			}	
+				Collections.shuffle (list); 
+				System.out.println ("�ANSLI NUMARALARINIZ..."+"\n"); 
+				System.out.print("- ");
+				for (int k = 0 ; k < 6 ; k ++) { 
+				System.out.print (list.get (k) +" - "  );		
+				}
+				System.out.println();
+				System.out.println();						
+		}		
+}
